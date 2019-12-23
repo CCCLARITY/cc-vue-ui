@@ -1,5 +1,5 @@
 <template>
-    <button class="g-button" @click="this.xxx" :class="{[`icon-${iconPosition}`]: true}">
+    <button class="g-button" @click="$emit('click')" :class="{[`icon-${iconPosition}`]: true}">
         <g-icon :name="icon" v-if="icon && !loading" class="icon"></g-icon>
         <g-icon class="loading icon" v-if="loading" name="loading"></g-icon>
         <div class="content">
@@ -26,12 +26,8 @@ export default {
         }
     },
     methods: {
-        xxx(){
-            this.$emit('yyy');
-        }
     },
     mounted() {
-        console.log('this.$options.propsData.icon', this.$options.propsData.icon)
     }
 }
 </script>
