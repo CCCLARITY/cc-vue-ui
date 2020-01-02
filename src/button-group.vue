@@ -5,6 +5,7 @@
 </template>
 <script>
     export default {
+        name: 'GuluButtonGroup',
         mounted() {
             for(let node of this.$el.children){
                 if(node.nodeName.toLowerCase() !== 'button'){

@@ -10,6 +10,7 @@
 
 <script>
 export default {
+    name: 'GuluButton',
     // props: ['icon', 'iconPosition'],
     props: {
         icon: {},
