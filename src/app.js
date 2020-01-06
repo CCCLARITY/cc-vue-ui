@@ -13,6 +13,11 @@ new Vue({
     el: '#app',
     data: {
         loading1: false,
+    },
+    methods: {
+        handleChange: function(e){
+            console.log('handleChange', e.target.value)
+        }
     }
 });
 
