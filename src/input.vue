@@ -1,12 +1,19 @@
 <template>
-    <div class="wrapper">
+    <div class="wrapper" :class="{error}">
         <input type="text" :value="value" :disabled="disabled" :readonly="readonly">
+        <template v-if="error">
+            <icon class="icon-error" name="error"></icon>
+            <span class="errorMessage">{{error}}</span>
+        </template>
     </div>
 </template>
 
 <script>
+    import Icon from './icon';
+
     export default {
         name: 'GuluInput',
+        components: {Icon},
         props: {
             value: {
                 type: String,
@@ -17,6 +24,9 @@
             },
             readonly: {
                 type: Boolean,
+            },
+            error: {
+                type: String,
             }
         }
     }
@@ -29,6 +39,7 @@
     $border-radius: 4px;
     $font-size: 12px;
     $box-shadow-color: rgba(0, 0, 0, 0.5);
+    $red: #f1453D;
     .wrapper{
         font-size: $font-size;
         display: inline-block;
@@ -50,6 +61,17 @@
                 color: #bbb;
                 cursor: not-allowed;
             }
+        }
+        &.error{
+            >input{
+                border-color: $red;
+            }
+        }
+        .icon-error{
+            fill: $red;
+        }
+        .errorMessage{
+            color: $red;
         }
     }
 </style>
