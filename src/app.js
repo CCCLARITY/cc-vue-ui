@@ -8,7 +8,8 @@ Vue.component('g-button', Button);
 Vue.component('g-icon', Icon);
 Vue.component('g-button-group', ButtonGroup);
 Vue.component('g-input', Input);
-
+console.log('develop');
+console.log('qwer');
 new Vue({
     el: '#app',
     data: {
