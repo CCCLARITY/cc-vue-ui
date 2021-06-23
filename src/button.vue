@@ -27,6 +27,9 @@ export default {
         }
     },
     methods: {
+        test(){
+            console.log('这是master文件的修改')
+        }
     },
     mounted() {
     }
